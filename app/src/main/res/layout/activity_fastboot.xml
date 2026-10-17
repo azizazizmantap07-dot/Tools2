@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_back"
+            android:src="@android:drawable/ic_menu_revert"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fastboot_title"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvFbStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fastboot_status_idle"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFbConnect"
+            style="@style/Widget.FlashingTool.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_fb_connect"
+            android:layout_marginEnd="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFbDisconnect"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_fb_disconnect"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdbRebootBootloader"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_adb_reboot_bootloader"
+            android:textSize="12sp"
+            android:layout_marginEnd="6dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressFb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="0"
+        android:visibility="gone"
+        android:layout_marginBottom="6dp" />
+
+    <!-- Quick-command chips removed — type commands at fastboot> prompt -->
+
+    <!-- Tab: Command (exec) vs Status/Debug -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="4dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabCmd"
+            style="@style/Widget.FlashingTool.Button"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="@string/fb_tab_command"
+            android:textSize="12sp"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabStatus"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="@string/fb_tab_status"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFbCopyAllLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/btn_copy_all_log"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginEnd="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFbCopyErrorLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/btn_copy_error_log"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp"
+            android:layout_marginEnd="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFbClearLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/btn_clear_log"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp" />
+    </LinearLayout>
+
+    <!-- Terminal: log + inline prompt (platform-tools style) -->
+    <LinearLayout
+        android:id="@+id/panelTerminal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card"
+        android:layout_marginBottom="0dp">
+
+        <!-- Command log (exec output) -->
+        <ScrollView
+            android:id="@+id/scrollFbLogCmd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="false"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvFbLogCmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textIsSelectable="true"
+                android:lineSpacingExtra="1dp" />
+        </ScrollView>
+
+        <!-- Status / progress / debug (same terminal panel, swapped) -->
+        <ScrollView
+            android:id="@+id/scrollFbLogStatus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvFbLogStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textIsSelectable="true"
+                android:lineSpacingExtra="1dp" />
+        </ScrollView>
+
+        <!-- Prompt line inside the same terminal box -->
+        <LinearLayout
+            android:id="@+id/rowTerminalInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="6dp"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/tvPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fastboot&gt; "
+                android:fontFamily="monospace"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingEnd="2dp" />
+
+            <EditText
+                android:id="@+id/etFbCommand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint=""
+                android:inputType="text"
+                android:imeOptions="actionSend"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_muted"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:padding="6dp"
+                android:background="@android:color/transparent"
+                android:maxLines="3"
+                android:minHeight="36dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFbPickFile"
+                style="@style/Widget.FlashingTool.Button.Tonal"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:minWidth="40dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="+"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:contentDescription="Pilih file"
+                android:layout_marginEnd="2dp"
+                android:padding="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFbRun"
+                style="@style/Widget.FlashingTool.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/btn_fb_run"
+                android:textSize="11sp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

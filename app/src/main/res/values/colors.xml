@@ -1,0 +1,29 @@
+<resources>
+    <color name="bg_dark">#0B0A10</color>
+    <color name="bg_elevated">#14121C</color>
+    <color name="card_bg">#1A1724</color>
+    <color name="card_stroke">#2A2540</color>
+    <color name="accent_purple">#8B5CF6</color>
+    <color name="accent_purple_dim">#6D28D9</color>
+    <color name="accent_cyan">#22D3EE</color>
+    <color name="accent_pink">#F472B6</color>
+    <color name="accent_purple_soft">#268B5CF6</color>
+    <color name="accent_cyan_soft">#2622D3EE</color>
+    <color name="accent_pink_soft">#26F472B6</color>
+    <color name="text_primary">#F8F7FC</color>
+    <color name="text_secondary">#A39EBB</color>
+    <color name="text_muted">#6B6580</color>
+    <color name="warn_amber">#FBBF24</color>
+    <color name="danger_red">#F87171</color>
+    <color name="status_ok">#34D399</color>
+    <color name="status_warn">#FBBF24</color>
+    <color name="status_error">#F87171</color>
+    <color name="status_idle">#6B6580</color>
+    <color name="log_info">#C4B5FD</color>
+    <color name="log_success">#6EE7B7</color>
+    <color name="log_warning">#FCD34D</color>
+    <color name="log_error">#FCA5A5</color>
+    <color name="log_raw">#A78BFA</color>
+    <color name="log_timestamp">#64748B</color>
+    <color name="ripple_light">#33FFFFFF</color>
+</resources>

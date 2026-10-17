@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.FlashingTool"
+        android:supportsRtl="true">
+
+        <!--
+          Home is the launcher only. USB_DEVICE_ATTACHED is intentionally NOT
+          registered here: that filter caused Android to bring Home to the front
+          (or recreate the task) whenever a matching device was plugged, which
+          made the user "kembali ke menu awal" and often force-closed the
+          Fastboot / Force Fastboot screen mid-session.
+          Detection is handled by dynamic BroadcastReceivers inside each activity.
+        -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/flasher_title"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.PgptManagerActivity"
+            android:exported="false"
+            android:label="@string/pgpt_title"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.FastbootActivity"
+            android:exported="false"
+            android:label="@string/fastboot_title"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.ForceFastbootActivity"
+            android:exported="false"
+            android:label="@string/force_title"
+            android:parentActivityName=".ui.HomeActivity" />
+    </application>
+</manifest>

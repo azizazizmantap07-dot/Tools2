@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <!-- fillViewport + kartu ber-weight: kartu mengisi sisa tinggi layar secara merata;
+         di layar pendek konten tetap bisa di-scroll. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="@style/Text.FlashingTool.Title"
+            android:textSize="28sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home_subtitle"
+            android:textAppearance="@style/Text.FlashingTool.Subtitle"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Card: Flasher -->
+        <LinearLayout
+            android:id="@+id/cardFlasher"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="120dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_card_feature"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:padding="11dp"
+                    android:background="@drawable/bg_icon_badge"
+                    android:backgroundTint="@color/accent_purple_soft"
+                    android:src="@drawable/ic_home_chip"
+                    android:tint="@color/accent_purple"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/home_card_flasher_title"
+                    android:textColor="@color/accent_purple"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_home_chevron"
+                    android:tint="@color/text_muted"
+                    android:importantForAccessibility="no" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_card_flasher_desc"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Card: Fastboot -->
+        <LinearLayout
+            android:id="@+id/cardFastboot"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="120dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_card_feature"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:padding="11dp"
+                    android:background="@drawable/bg_icon_badge"
+                    android:backgroundTint="@color/accent_cyan_soft"
+                    android:src="@drawable/ic_home_terminal"
+                    android:tint="@color/accent_cyan"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/home_card_fastboot_title"
+                    android:textColor="@color/accent_cyan"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_home_chevron"
+                    android:tint="@color/text_muted"
+                    android:importantForAccessibility="no" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_card_fastboot_desc"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Card: Force Fastboot -->
+        <LinearLayout
+            android:id="@+id/cardForce"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="120dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_card_feature"
+            android:padding="20dp"
+            android:layout_marginBottom="14dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:padding="11dp"
+                    android:background="@drawable/bg_icon_badge"
+                    android:backgroundTint="@color/accent_pink_soft"
+                    android:src="@drawable/ic_home_bolt"
+                    android:tint="@color/accent_pink"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/home_card_force_title"
+                    android:textColor="@color/accent_pink"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_home_chevron"
+                    android:tint="@color/text_muted"
+                    android:importantForAccessibility="no" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_card_force_desc"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Footer: catatan keamanan, menempel di dasar layar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_home_warn"
+                android:tint="@color/text_muted"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/home_footer"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
