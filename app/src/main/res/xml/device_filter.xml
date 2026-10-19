@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MediaTek BROM / Preloader (0x0E8D = 3725) -->
+    <usb-device vendor-id="3725" product-id="3" />
+    <usb-device vendor-id="3725" product-id="5" />
+    <usb-device vendor-id="3725" product-id="2" />
+    <usb-device vendor-id="3725" product-id="8192" />
+    <usb-device vendor-id="3725" product-id="8193" />
+    <!-- Google Fastboot / ADB (0x18D1 = 6353) -->
+    <usb-device vendor-id="6353" product-id="20192" />
+    <usb-device vendor-id="6353" product-id="20193" />
+    <usb-device vendor-id="6353" product-id="20194" />
+    <usb-device vendor-id="6353" product-id="20195" />
+    <usb-device vendor-id="6353" product-id="20196" />
+    <usb-device vendor-id="6353" product-id="20197" />
+    <usb-device vendor-id="6353" product-id="20198" />
+    <usb-device vendor-id="6353" product-id="20199" />
+    <usb-device vendor-id="6353" product-id="53261" />
+    <!-- Xiaomi (0x2717 = 10007) -->
+    <usb-device vendor-id="10007" />
+    <!-- Oppo / Realme (0x22D9 = 8921) -->
+    <usb-device vendor-id="8921" />
+    <!-- OnePlus (0x2A70 = 10864) -->
+    <usb-device vendor-id="10864" />
+    <!-- Vivo (0x2D95 = 11669) -->
+    <usb-device vendor-id="11669" />
+    <!-- Samsung (0x04E8 = 1256) -->
+    <usb-device vendor-id="1256" />
+    <!-- Huawei (0x12D1 = 4817) -->
+    <usb-device vendor-id="4817" />
+</resources>

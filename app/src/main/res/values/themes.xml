@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FlashingTool" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_purple_dim</item>
+        <item name="colorPrimaryVariant">@color/accent_purple</item>
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorSurface">@color/glass_fill</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@drawable/bg_ambient_liquid</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
+        <item name="materialButtonStyle">@style/Widget.FlashingTool.Button</item>
+    </style>
+
+    <!-- Primary glass button: tint null so ripple drawable is visible -->
+    <style name="Widget.FlashingTool.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:background">@drawable/bg_button_glass</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">22dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="rippleColor">#55FFFFFF</item>
+    </style>
+
+    <style name="Widget.FlashingTool.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:background">@drawable/bg_button_glass_tonal</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">22dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="rippleColor">#44FFFFFF</item>
+    </style>
+
+    <style name="Widget.FlashingTool.Button.Danger" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:background">@drawable/bg_button_glass_danger</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">22dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="rippleColor">#55FFFFFF</item>
+    </style>
+
+    <style name="Text.FlashingTool.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="Text.FlashingTool.Subtitle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+</resources>

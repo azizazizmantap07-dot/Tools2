@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_ambient_liquid"
+    android:fitsSystemWindows="true"
+    android:paddingHorizontal="12dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="6dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_back_glass"
+            android:contentDescription="@string/btn_back"
+            android:src="@android:drawable/ic_menu_revert"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flasher_title"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/status_idle"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- USB status — compact single row + optional detail -->
+    <LinearLayout
+        android:id="@+id/cardUsbStatus"
+            android:background="@drawable/bg_glass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginBottom="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/viewUsbDot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/bg_dot"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tvUsbStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/usb_none"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRefreshUsb"
+                style="@style/Widget.FlashingTool.Button.Tonal"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:minHeight="32dp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="10dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/btn_refresh_usb"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvUsbDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="monospace"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Action buttons — compact 3×2 + full-width PGPT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoadDa"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_load_da"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoadScatter"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_load_scatter"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConnect"
+            style="@style/Widget.FlashingTool.Button"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_connect"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStopConnect"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_stop_process"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHwInfo"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_hw_info"
+            android:textSize="12sp"
+            android:enabled="false" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOpenPgpt"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:minHeight="36dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_open_pgpt"
+            android:textSize="12sp"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_partitions"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_marginBottom="2dp" />
+
+    <ListView
+        android:id="@+id/lvPartitions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.8"
+        android:background="@drawable/bg_glass_soft"
+        android:divider="@color/glass_stroke_soft"
+        android:dividerHeight="1dp"
+        android:padding="6dp"
+        android:layout_marginBottom="6dp"
+        android:minHeight="120dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/label_log"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCopyAllLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minHeight="28dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_copy_all_log"
+            android:textSize="10sp"
+            android:layout_marginEnd="3dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCopyErrorLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minHeight="28dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_copy_error_log"
+            android:textSize="10sp"
+            android:layout_marginEnd="3dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearLog"
+            style="@style/Widget.FlashingTool.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minHeight="28dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/btn_clear_log"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:background="@drawable/bg_log_panel"
+        android:minHeight="100dp">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:fontFamily="monospace"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:textIsSelectable="true" />
+    </ScrollView>
+</LinearLayout>
