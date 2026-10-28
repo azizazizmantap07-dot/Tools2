@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.SFA.GlassAlertDialog</item>
+    </style>
+
+    <!-- Solid glass look (same navy fill + radius as GlassAlertDialog in Compose) for
+         legacy MaterialAlertDialogBuilder popups such as errorDialogBuilder(). -->
+    <style name="ThemeOverlay.SFA.GlassAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.SFA.Glass</item>
+    </style>
+
+    <style name="MaterialAlertDialog.SFA.Glass" parent="MaterialAlertDialog.Material3">
+        <item name="backgroundTint">#F0182030</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.SFA.GlassDialog</item>
+    </style>
+
+    <style name="ShapeAppearance.SFA.GlassDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
+    </style>
+
+    <style name="AppTheme.Translucent" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.Share" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="android:navigationBarColor">?attr/colorSurfaceContainerLow</item>
+    </style>
+</resources>
